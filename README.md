@@ -12,6 +12,16 @@ ASP.NET Core Demo API with MongoDB and TDD with xUnit and Moq
 
 ## How to
 
+* http://localhost:8002/api/products
+* http://localhost:8002/api/products?query={'id':1}
+* http://localhost:8002/api/products?query={'price':{$gte:120,$lte:130}}
+* http://localhost:8002/api/products?query={'attribute.fantastic.value':{$eq:true}}
+* http://localhost:8002/api/products?query={'attribute.rating.value':{$gte:1.20,$lte:2.3}}
+
 ## Overview
 
 ## Run & Deploy
+
+* dotnet restore
+* dotnet build
+* dotnet run

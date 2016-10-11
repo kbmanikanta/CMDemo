@@ -62,9 +62,9 @@ namespace CMDemo.API.Models
             return collection.Find<Product>(query).ToList();
         }
 
-        public IList<Product> GetByFantastic(decimal min, decimal max)
+        public IList<Product> GetByFantastic(string value)
         {
-            var jsonQuery = $"{{'attribute.fantastic.value':{{$gte:{min},$lte:{max}}}}}";
+            var jsonQuery = $"{{'attribute.fantastic.value':{{$eq:{value}}}}}";
             var query = new QueryDocument(BsonSerializer.Deserialize<BsonDocument>(jsonQuery));
             return collection.Find<Product>(query).ToList();
         }
