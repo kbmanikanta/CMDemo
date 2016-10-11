@@ -58,9 +58,9 @@ namespace CMDemo.API.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public IList<Product> GetByFantastic(decimal min = 0, decimal max = 0)
+        public IList<Product> GetByFantastic(string value = "")
         {
-            return repository.GetByFantastic(min, max);
+            return repository.GetByFantastic(value);
         }
 
         [HttpGet]

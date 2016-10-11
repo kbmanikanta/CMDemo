@@ -18,7 +18,7 @@ namespace CMDemo.API.Models
 
         IList<Product> GetByPrice(decimal min, decimal max);
 
-        IList<Product> GetByFantastic(decimal min, decimal max);
+        IList<Product> GetByFantastic(string value);
 
         IList<Product> GetByRating(decimal min, decimal max);
     }
