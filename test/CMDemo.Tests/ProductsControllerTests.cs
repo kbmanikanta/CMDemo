@@ -40,7 +40,7 @@ namespace CMDemo.Tests
             repository.Setup(x => x.GetAll()).Returns(products);
 
             // Act
-            var result = sut.Get("");
+            var result = sut.Get();
 
             // Assert
             result.ShouldBe(products);
@@ -51,7 +51,7 @@ namespace CMDemo.Tests
         {
             // Arrange
             List<Product> list = products.Where(x => x.Id == 1).ToList();
-            string json = "query={id:1}";
+            string json = "query={'id':1}";
             repository.Setup(x => x.Filter(json)).Returns(list);
 
             // Act
@@ -62,7 +62,7 @@ namespace CMDemo.Tests
         }
 
         [Fact]
-        public void GetProductWithIncorrectId_ShooldReturnNull()
+        public void GetProductWithIncorrectId_ShouldReturnNull()
         {
             // Arrange
             List<Product> list = new List<Product>();
