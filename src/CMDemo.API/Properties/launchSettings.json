@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WinningAPI": {
+    "CMDemo.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "http://localhost:8002/api/products",

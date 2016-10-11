@@ -57,24 +57,21 @@ namespace CMDemo.API.Models
 
         public IList<Product> GetByPrice(decimal min, decimal max)
         {
-            var jsonQuery = string.Format("{{'price':{{$gte:{0},$lte:{1}}}}}", min, max);
-
+            var jsonQuery = $"{{'price':{{$gte:{min},$lte:{max}}}}}";
             var query = new QueryDocument(BsonSerializer.Deserialize<BsonDocument>(jsonQuery));
             return collection.Find<Product>(query).ToList();
         }
 
         public IList<Product> GetByFantastic(decimal min, decimal max)
         {
-            var jsonQuery = string.Format("{{'attribute.fantastic.value':{{$gte:{0},$lte:{1}}}}}", min, max);
-
+            var jsonQuery = $"{{'attribute.fantastic.value':{{$gte:{min},$lte:{max}}}}}";
             var query = new QueryDocument(BsonSerializer.Deserialize<BsonDocument>(jsonQuery));
             return collection.Find<Product>(query).ToList();
         }
 
         public IList<Product> GetByRating(decimal min, decimal max)
         {
-            var jsonQuery = string.Format("{{'attribute.rating.value':{{$gte:{0},$lte:{1}}}}}", min, max);
-
+            var jsonQuery = $"{{'attribute.rating.value':{{$gte:{min},$lte:{max}}}}}";
             var query = new QueryDocument(BsonSerializer.Deserialize<BsonDocument>(jsonQuery));
             return collection.Find<Product>(query).ToList();
         }
