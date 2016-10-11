@@ -1,6 +1,6 @@
 # Welcome to CMDemo
 
-ASP.NET Core Demo API with MongoDB and TDD with xUnit
+ASP.NET Core Demo API with MongoDB and TDD with xUnit and Moq
 
 ## This application consists of:
 
