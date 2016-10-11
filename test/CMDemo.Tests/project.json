@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "copyToOutput": {
+      "include": [
+        "xunit.runner.json"
+      ]
+    }
+  },
+  "testRunner": "xunit",
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.1"
+    },
+    "Shouldly": "2.8.2",
+    "moq.netcore": "4.4.0-beta8",
+    "xunit": "2.2.0-beta3-build3402",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "CMDemo.API": {
+      "target": "project"
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {},
+      "imports": [
+        "portable-net45+win8",
+        "dotnet54",
+        "dnxcore50"
+      ]
+    }
+  },
+  "tooling": {
+    "defaultNamespace": "CMDemo.Tests"
+  }
+}
