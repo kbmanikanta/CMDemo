@@ -18,16 +18,19 @@
     "moq.netcore": "4.4.0-beta8",
     "xunit": "2.2.0-beta3-build3402",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
-    "NETStandard.Library": "1.6.0",
     "CMDemo.API": {
       "target": "project"
     }
   },
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [
-        "dotnet54"
-      ]
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      },
+      "imports": "dnxcore50"
     }
   },
   "tooling": {
