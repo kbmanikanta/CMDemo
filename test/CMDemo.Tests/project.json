@@ -10,10 +10,6 @@
   },
   "testRunner": "xunit",
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "type": "platform",
-      "version": "1.0.1"
-    },
     "Shouldly": "2.8.2",
     "moq.netcore": "4.4.0-beta8",
     "xunit": "2.2.0-beta3-build3402",
@@ -23,15 +19,17 @@
     }
   },
   "frameworks": {
+    //"net461": {},
     "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.1"
-        }
-      },
-      "imports": "dnxcore50"
+      "imports": "dnxcore50",
+      "dependencies": {}
     }
+  },
+  "runtimes": {
+    "osx.10.12-x64": {},
+    "win10-x64": {},
+    "win7-x64": {},
+    "ubuntu.14.04-x64": {}
   },
   "tooling": {
     "defaultNamespace": "CMDemo.Tests"
