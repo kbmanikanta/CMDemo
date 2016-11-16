@@ -10,28 +10,33 @@
   },
   "testRunner": "xunit",
   "dependencies": {
+    "Microsoft.DotNet.InternalAbstractions": "1.0.500-preview2-1-003177",
     "Shouldly": "2.8.2",
     "moq.netcore": "4.4.0-beta8",
-    "xunit": "2.2.0-beta3-build3402",
+    "xunit": "2.2.0-beta4-build3444",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "CMDemo.API": {
       "target": "project"
     }
   },
   "frameworks": {
-    //"net461": {},
     "netcoreapp1.0": {
       "imports": "dnxcore50",
-      "dependencies": {}
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.1"
+        }
+      }
+    },
+    "runtimes": {
+      "osx.10.12-x64": {},
+      "win10-x64": {},
+      "win7-x64": {},
+      "ubuntu.14.04-x64": {}
+    },
+    "tooling": {
+      "defaultNamespace": "CMDemo.Tests"
     }
-  },
-  "runtimes": {
-    "osx.10.12-x64": {},
-    "win10-x64": {},
-    "win7-x64": {},
-    "ubuntu.14.04-x64": {}
-  },
-  "tooling": {
-    "defaultNamespace": "CMDemo.Tests"
   }
 }
