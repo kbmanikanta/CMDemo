@@ -21,22 +21,20 @@
   },
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": "dnxcore50",
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.1"
-        }
-      }
-    },
-    "runtimes": {
-      "osx.10.12-x64": {},
-      "win10-x64": {},
-      "win7-x64": {},
-      "ubuntu.14.04-x64": {}
-    },
-    "tooling": {
-      "defaultNamespace": "CMDemo.Tests"
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8"
+      ],
+      "dependencies": {}
     }
+  },
+  "runtimes": {
+    "osx.10.12-x64": {},
+    "ubuntu.14.04-x64": {},
+    "win10-x64": {},
+    "win7-x64": {}
+  },
+  "tooling": {
+    "defaultNamespace": "CMDemo.Tests"
   }
 }
