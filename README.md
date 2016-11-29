@@ -20,7 +20,10 @@ ASP.NET Core Demo API with MongoDB and TDD with xUnit and Moq
 
 ## Overview
 
-Moq is not currently compatible with .NETStandard. The package for .Net Core is not in NuGet, need to configure and get from another source. 
+Moq is not currently compatible with .NETStandard. The package for .Net Core is not in NuGet, need to configure and get from another source feed. 
+
+In order to get Moq (4.4.0-beta8) to work, need to add a new NuGet feed.
+* https://www.myget.org/F/aspnet-contrib/api/v3/index.json
 
 ## Run & Deploy
 
