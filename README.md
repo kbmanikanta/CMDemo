@@ -1,10 +1,10 @@
 # Welcome to CMDemo
 
-ASP.NET Core Demo API with MongoDB and TDD with xUnit and Moq
+.NET Core Demo API with MongoDB and TDD with xUnit and Moq
 
 ## This application consists of:
 
-* Sample API using ASP.NET Core MVC (build on .NETStandard1.6)
+* Sample API using .NET Core MVC (build for .NETStandard1.6)
 * Connects to MongoDB
 * Autofac Dependency Injection
 * TDD using xUnit and Moq
