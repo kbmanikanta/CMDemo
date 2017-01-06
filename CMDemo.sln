@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MHDemo.API", "src\CMDemo.API\CMDemo.API.xproj", "{94806AC7-2966-4940-BB90-1C28214E481C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CMDemo.API", "src\CMDemo.API\CMDemo.API.xproj", "{94806AC7-2966-4940-BB90-1C28214E481C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MHDemo.Tests", "test\CMDemo.Tests\CMDemo.Tests.xproj", "{6331338C-FE7C-4B56-B3EC-B540BC44073B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CMDemo.Tests", "test\CMDemo.Tests\CMDemo.Tests.xproj", "{6331338C-FE7C-4B56-B3EC-B540BC44073B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
