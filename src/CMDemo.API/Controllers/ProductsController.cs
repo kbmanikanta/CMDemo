@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using CMDemo.API.Models;
 
@@ -33,6 +33,13 @@ namespace CMDemo.API.Controllers
         public void Post([FromBody] Product p)
         {
             repository.Create(p);
+        }
+
+        // GET api/products/5
+        [HttpGet("{id}")]
+        public Product Get(int id)
+        {
+            return repository.Get(id);
         }
 
         // PUT api/products/5
