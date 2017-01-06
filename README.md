@@ -12,7 +12,7 @@
 
 ## Overview
 
-The written code has been tested to build and run on Linux, MacOS and Windows.
+The written code has been tested to build and run on Linux, MacOS and Windows with SDK "1.0.0-preview2-1-003177".
 
 Moq is not currently compatible with .NETStandard. The package for .Net Core is not in NuGet, need to configure and get from another source feed. 
 
