@@ -50,6 +50,21 @@ namespace CMDemo.Tests
         public void GetProductWithId_ShouldReturnsCorrectItem_FromRepository()
         {
             // Arrange
+            Product product = products.Where(x => x.Id == 1).FirstOrDefault();
+            int id = 1;
+            repository.Setup(x => x.Get(id)).Returns(product);
+
+            // Act
+            var result = sut.Get(id);
+
+            // Assert
+            result.ShouldBe(product);
+        }
+
+        [Fact]
+        public void GetProductWithIdQuery_ShouldReturnsCorrectItem_FromRepository()
+        {
+            // Arrange
             List<Product> list = products.Where(x => x.Id == 1).ToList();
             string json = "query={'id':1}";
             repository.Setup(x => x.Filter(json)).Returns(list);
