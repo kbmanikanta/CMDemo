@@ -32,6 +32,12 @@ namespace CMDemo.API
         {
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDb"));
 
+            // Add CORS middleware before MVC
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
+
             // Add framework services.
             services.AddMvc();
             services.AddMvcCore().AddJsonFormatters();
@@ -51,6 +57,9 @@ namespace CMDemo.API
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            // Add CORS middleware before MVC
+            app.UseCors("AllowAll");
 
             app.UseMvc();
         }
