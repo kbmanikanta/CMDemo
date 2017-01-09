@@ -4,11 +4,15 @@
 
 ## This application consists of:
 
+Back-end API
 * Sample API using .NET Core MVC (build for .NETStandard1.6)
 * Connects to MongoDB
 * Autofac Dependency Injection
 * TDD using xUnit and Moq
 * Code can be run on either VS Code or Visual Studio
+
+Front-end
+* Angular2 with angular-cli
 
 ## Overview
 
@@ -27,8 +31,12 @@ In order to get Moq (4.4.0-beta8) to work, need to add a new NuGet feed.
 
 ## How to
 
+Back-end API
 * http://localhost:8002/api/products
 * http://localhost:8002/api/products?query={'id':1}
 * http://localhost:8002/api/products?query={'price':{$gte:120,$lte:130}}
 * http://localhost:8002/api/products?query={'attribute.fantastic.value':{$eq:true}}
 * http://localhost:8002/api/products?query={'attribute.rating.value':{$gte:1.20,$lte:2.3}}
+
+Front-end
+* http://localhost:4200/products
