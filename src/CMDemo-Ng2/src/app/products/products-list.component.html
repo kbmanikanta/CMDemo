@@ -1,0 +1,21 @@
+<section>
+    <section *ngIf="isLoading && !errorMessage">
+        Loading our hyperdrives!!! Retrieving data...
+    </section>
+    <div class="row">
+        <div class="medium-10 columns">
+            <ul>
+                <!-- this is the new syntax for ng-repeat -->
+                <li *ngFor="let product of products | paginate: { id:'server', itemsPerPage: pageSize, currentPage: page, totalItems: total }">
+                    <a href="#" [routerLink]="['/products', product.id]">{{product.name}}</a>
+                </li>
+            </ul>
+            <div class="spinner" [ngClass]="{ 'hidden': !isLoading }"></div>
+            <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+        </div>
+        <div class="medium-2 columns"></div>
+    </div>
+    <section *ngIf="errorMessage">
+        {{errorMessage}}
+    </section>
+</section>

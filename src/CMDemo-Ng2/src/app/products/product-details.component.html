@@ -1,0 +1,37 @@
+<!-- new syntax for ng-if -->
+<section *ngIf="product">
+  <div class="row">
+    <div class="medium-10 columns">
+      <section>
+        <h2 class="product-name">You selected: {{product.name}}</h2>
+        <h3>Description</h3>
+        <div class="note note-caution">
+          <p>
+            {{product.name}} <span>has price ${{product.price}}.</span>
+          </p>
+        </div>
+      </section>
+      <section>
+        <form (ngSubmit)="saveProductDetails()" #productForm="ngForm">
+          <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" required [(ngModel)]="product.name" #name="ngModel">
+            <div [hidden]="name.valid || name.pristine" class="error">
+              Name is required!
+            </div>
+          </div>
+          <div>
+            <label for="price">Price:</label>
+            <div class="input-group">
+              <span class="input-group-label">$</span>
+              <input class="input-group-field" type="number" name="price" [(ngModel)]="product.price">
+            </div>
+          </div>
+          <button class="success button" type="submit" [disabled]="!productForm.form.valid">Save</button>
+        </form>
+      </section>
+      <button class="button" (click)="gotoProductsList()">Back to Products List</button>
+    </div>
+    <div class="medium-2 columns"></div>
+  </div>
+</section>
