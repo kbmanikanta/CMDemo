@@ -28,6 +28,15 @@ namespace CMDemo.API.Controllers
             return repository.Filter(query);
         }
 
+        // GET: api/products/1/10
+        [HttpGet("{pageIndex:int}/{pageSize:int}")]
+        public ActionResult GetAllForPagination(int pageIndex, int pageSize)
+        {
+            var products = repository.GetAllForPagination(pageIndex, pageSize);
+            var count = repository.GetTotalCount();
+            return Json(new { data = products, page = pageIndex, total = count });
+        }
+
         // POST api/products
         [HttpPost]
         public void Post([FromBody] Product p)
