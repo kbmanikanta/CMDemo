@@ -6,6 +6,10 @@ namespace CMDemo.API.Models
     {
         IList<Product> GetAll();
 
+        long GetTotalCount();
+
+        IList<Product> GetAllForPagination(int pageIndex, int pageSize);
+
         Product Get(int id);
 
         IList<Product> Filter(string jsonQuery);
