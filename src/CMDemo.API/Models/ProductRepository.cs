@@ -25,6 +25,21 @@ namespace CMDemo.API.Models
             return query.Result;
         }
 
+        public long GetTotalCount()
+        {
+            //var query = collection.Find(e => true).ToListAsync();
+            //return query.Result.Count;
+            var filter = Builders<Product>.Filter.Empty;
+            long count = collection.Count(filter);
+            return count;
+        }
+
+        public IList<Product> GetAllForPagination(int pageIndex, int pageSize)
+        {
+            var query = collection.Find(e => true).Skip((pageIndex - 1) * pageSize).Limit(pageSize).ToListAsync();
+            return query.Result;
+        }
+
         public Product Get(int id)
         {
             var filter = Builders<Product>.Filter.Eq(s => s.Id, id);
