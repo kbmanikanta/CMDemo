@@ -9,7 +9,7 @@ import { ProductsService } from './products/products.service';
 })
 
 export class AppComponent {
-  // title = 'app works!';
+
   title = 'CMDemo - Angular 2 works!';
 
   constructor(private productsService: ProductsService) { }

@@ -1,37 +1,91 @@
 <!-- new syntax for ng-if -->
 <section *ngIf="product">
   <div class="row">
-    <div class="medium-10 columns">
-      <section>
-        <h2 class="product-name">You selected: {{product.name}}</h2>
-        <h3>Description</h3>
-        <div class="note note-caution">
-          <p>
-            {{product.name}} <span>has price ${{product.price}}.</span>
-          </p>
+    <div class="large-12 columns">
+      <h3>Product Detail</h3>
+      <!--
+      <h2 class="product-name">You selected: {{product.name}}</h2>
+      <h3>Description</h3>
+      <div class="note note-caution">
+        <p>
+          {{product.name}} <span>has price ${{product.price}}.</span>
+        </p>
+      </div>
+    -->
+    </div>
+  </div>
+
+  <form (ngSubmit)="saveProductDetails()" #productForm="ngForm">
+    <div class="row">
+      <div class="large-12 columns">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required [(ngModel)]="product.name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="error">
+          Name is required!
         </div>
-      </section>
-      <section>
-        <form (ngSubmit)="saveProductDetails()" #productForm="ngForm">
-          <div>
-            <label for="name">Name: </label>
-            <input type="text" name="name" required [(ngModel)]="product.name" #name="ngModel">
-            <div [hidden]="name.valid || name.pristine" class="error">
-              Name is required!
-            </div>
-          </div>
-          <div>
-            <label for="price">Price:</label>
-            <div class="input-group">
-              <span class="input-group-label">$</span>
-              <input class="input-group-field" type="number" name="price" [(ngModel)]="product.price">
-            </div>
-          </div>
-          <button class="success button" type="submit" [disabled]="!productForm.form.valid">Save</button>
-        </form>
-      </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="input-group">
+          <span class="input-group-label">SKU</span>
+          <input class="input-group-field" type="text" name="sku" [(ngModel)]="product.sku">
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="input-group">
+          <span class="input-group-label">Price</span>
+          <span class="input-group-label">$</span>
+          <input class="input-group-field" type="number" name="price" [(ngModel)]="product.price">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-6 columns prefix-round">
+        <h5>Fantastic</h5>
+        <div class="input-group">
+          <span class="input-group-label">name</span>
+          <input class="input-group-field" type="text" name="fantastic.name" [(ngModel)]="product.attribute.fantastic.name">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label">type &nbsp;</span>
+          <input class="input-group-field" type="text" name="fantastic.type" [(ngModel)]="product.attribute.fantastic.type">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label">value</span>
+          <input class="input-group-field" type="text" name="fantastic.value" [(ngModel)]="product.attribute.fantastic.value">
+        </div>
+        
+      </div>
+      <div class="small-6 columns">
+        <h5>Rating</h5>
+        <div class="input-group">
+          <span class="input-group-label">name</span>
+          <input class="input-group-field" type="text" name="rating.name" [(ngModel)]="product.attribute.rating.name">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label">type &nbsp;</span>
+          <input class="input-group-field" type="text" name="rating.type" [(ngModel)]="product.attribute.rating.type">
+        </div>
+        <div class="input-group">
+          <span class="input-group-label">value</span>
+          <input class="input-group-field" type="text" name="rating.value" [(ngModel)]="product.attribute.rating.value">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <button class="success button" type="submit" [disabled]="!productForm.form.valid">Save</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="large-12 columns">
       <button class="button" (click)="gotoProductsList()">Back to Products List</button>
     </div>
-    <div class="medium-2 columns"></div>
   </div>
 </section>

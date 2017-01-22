@@ -6,9 +6,9 @@ export interface IProduct {
     price: number;
     attribute: {
         fantastic: {
-            value: boolean;
-            type: number;
             name: string;
+            type: number;
+            value: boolean;
         },
         rating: {
             name: string;

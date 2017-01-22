@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { IProduct, IPagedResponse } from './product';
+import { IPagedResponse, IProduct } from './product';
 
 @Injectable()
 export class ProductsService {
@@ -49,12 +49,11 @@ export class ProductsService {
 
 function mapPagedResponse(res: Response): IPagedResponse<IProduct> {
     let pagedRes = <IPagedResponse<IProduct>>({
-        data: res.json().data,
-        total: res.json().total,
         page: res.json().page,
+        total: res.json().total,
+        data: res.json().data,
     });
-    console.log('service - total count:', pagedRes.total);
-    console.log('service - page index:', pagedRes.page);
+    console.log('service - page index:', pagedRes.page, ' | total count:', pagedRes.total);
     return pagedRes;
 }
 
@@ -72,7 +71,9 @@ function toProduct(res: any): IProduct {
     let product = <IProduct>({
         id: extractId(res),
         name: res.name,
+        sku: res.sku,
         price: res.price,
+        attribute: res.attribute,
     });
     console.log('Parsed Product:', product);
     return product;

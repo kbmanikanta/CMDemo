@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Response } from '@angular/http';
 
@@ -14,8 +14,6 @@ import { ProductsService } from './products.service';
 export class ProductDetailsComponent implements OnInit, OnDestroy {
   product: IProduct;
   sub: any;
-  price: number;
-  attribute: any;
 
   constructor(private productsService: ProductsService,
     private route: ActivatedRoute,

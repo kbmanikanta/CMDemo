@@ -8,7 +8,7 @@ import { AppRouting } from './app.routes';
 import { AppComponent } from './app.component';
 import { ProductsService } from './products/products.service';
 import { ProductsListComponent } from './products/products-list.component';
-import { ProductDetailsComponent } from './products/product-details.component';
+import { ProductDetailsComponent  } from './products/product-details.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +18,10 @@ import { ProductDetailsComponent } from './products/product-details.component';
   ],
   imports: [
     BrowserModule,
-    Ng2PaginationModule,
-    AppRouting,
     FormsModule,
     HttpModule,
+    AppRouting,
+    Ng2PaginationModule,
   ],
   bootstrap: [AppComponent],
   providers: [],
