@@ -9,7 +9,7 @@ namespace CMDemo.API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        private IProductRepository repository;
+        private readonly IProductRepository repository;
 
         public ProductsController(IProductRepository repository)
         {

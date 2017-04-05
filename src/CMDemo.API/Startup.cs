@@ -34,11 +34,6 @@ namespace CMDemo.API
 
             // Add CORS middleware before MVC
             services.AddCors();
-            //services.AddCors(options =>
-            //{
-            //    //options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-            //    options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            //});
 
             // Add framework services.
             services.AddMvc();

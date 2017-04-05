@@ -1,26 +1,26 @@
+using CMDemo.API.Controllers;
+using CMDemo.API.Models;
 using Moq;
 using Newtonsoft.Json;
 using Shouldly;
 using System.Collections.Generic;
 using System.Linq;
-using CMDemo.API.Controllers;
-using CMDemo.API.Models;
 using Xunit;
 
 namespace CMDemo.Tests
 {
     public class ProductsControllerTests
     {
-        private Mock<IProductRepository> repository;
+        private readonly Mock<IProductRepository> repository;
 
-        private ProductsController sut;
+        private readonly ProductsController sut;
 
         private List<Product> products;
 
         public ProductsControllerTests()
         {
             // Prepare Test Data
-            string json = @"[
+            const string json = @"[
                 {'id':1,'sku':'170-10-8596','name':'Birch','price':960.3,'attribute':{'fantastic':{'value':true,'type':1,'name':'fantastic'},'rating':{'name':'rating','type':'2','value':2.7}}},
                 {'id':2,'sku':'370-04-2494','name':'Cocoa butter, Phenylephrine HCl, Shark liver oil','price':983.7,'attribute':{'fantastic':{'value':true,'type':1,'name':'fantastic'},'rating':{'name':'rating','type':'2','value':2.0}}},
                 {'id':3,'sku':'470-21-1561','name':'simvastatin','price':196.75,'attribute':{'fantastic':{'value':true,'type':1,'name':'fantastic'},'rating':{'name':'rating','type':'2','value':4.0}}}
@@ -50,8 +50,8 @@ namespace CMDemo.Tests
         public void GetProductWithId_ShouldReturnsCorrectItem_FromRepository()
         {
             // Arrange
-            Product product = products.Where(x => x.Id == 1).FirstOrDefault();
-            int id = 1;
+            var product = products.FirstOrDefault(x => x.Id == 1);
+            const int id = 1;
             repository.Setup(x => x.Get(id)).Returns(product);
 
             // Act
@@ -65,8 +65,8 @@ namespace CMDemo.Tests
         public void GetProductWithIdQuery_ShouldReturnsCorrectItem_FromRepository()
         {
             // Arrange
-            List<Product> list = products.Where(x => x.Id == 1).ToList();
-            string json = "query={'id':1}";
+            var list = products.Where(x => x.Id == 1).ToList();
+            const string json = "query={'id':1}";
             repository.Setup(x => x.Filter(json)).Returns(list);
 
             // Act
@@ -80,8 +80,8 @@ namespace CMDemo.Tests
         public void GetProductWithIncorrectId_ShouldReturnNull()
         {
             // Arrange
-            List<Product> list = new List<Product>();
-            string json = "query={'id':-1}";
+            var list = new List<Product>();
+            const string json = "query={'id':-1}";
             repository.Setup(x => x.Filter(json)).Returns(list);
 
             // Act
